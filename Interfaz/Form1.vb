@@ -1,30 +1,32 @@
-﻿Public Class Form1
-    Private Sub Label7_Click(sender As Object, e As EventArgs) Handles Label7.Click
-
-    End Sub
-
-    Private Sub Label9_Click(sender As Object, e As EventArgs) Handles Label9.Click
-
-    End Sub
+﻿Imports Entities
+Public Class Form1
 
     Private Sub RegistrarNuevoClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RegistrarNuevoClienteToolStripMenuItem.Click
         Dim RegisterCustomerForm As New RegistrarCliente
-        RegisterCustomerForm.Show()
+        RegisterCustomerForm.ShowDialog()
 
-    End Sub
-
-    Private Sub btnRegisterCustomer_Click(sender As Object, e As EventArgs) Handles btnRegisterCustomer.Click
-        Dim RegisterCustomerForm As New RegistrarCliente
-        RegisterCustomerForm.Show()
     End Sub
 
     Private Sub ProductosRegistradosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ProductosRegistradosToolStripMenuItem.Click
         Dim listOfProductsForm As New listaProductos
-        listOfProductsForm.Show()
+        listOfProductsForm.ShowDialog()
     End Sub
 
     Private Sub ListaDeFacturasRegistradasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ListaDeFacturasRegistradasToolStripMenuItem.Click
         Dim listOfBillsForm As New listaFacturasRegistradas
-        listOfBillsForm.Show()
+        listOfBillsForm.ShowDialog()
+    End Sub
+
+    Private Sub btnAgregar_Click(sender As Object, e As EventArgs) Handles btnAgregar.Click
+        Dim RegisterCustomerForm As New RegistrarCliente
+        RegisterCustomerForm.ShowDialog()
+    End Sub
+
+    Private Sub Label17_Click(sender As Object, e As EventArgs) Handles Label17.Click
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class
