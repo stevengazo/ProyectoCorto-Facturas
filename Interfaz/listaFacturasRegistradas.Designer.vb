@@ -388,7 +388,7 @@ Partial Class listaFacturasRegistradas
         Me.Controls.Add(Me.GroupBox1)
         Me.Name = "listaFacturasRegistradas"
         Me.ShowIcon = False
-        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Facturas Registradas"
         Me.GroupBox1.ResumeLayout(False)
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
