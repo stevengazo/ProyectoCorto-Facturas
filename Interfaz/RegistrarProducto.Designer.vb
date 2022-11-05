@@ -23,8 +23,8 @@ Partial Class RegistrarProducto
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnCancel = New System.Windows.Forms.Button()
+        Me.btnAddProduct = New System.Windows.Forms.Button()
         Me.Nvalue = New System.Windows.Forms.NumericUpDown()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.txtDescription = New System.Windows.Forms.TextBox()
@@ -39,8 +39,8 @@ Partial Class RegistrarProducto
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button3)
-        Me.GroupBox1.Controls.Add(Me.Button2)
+        Me.GroupBox1.Controls.Add(Me.btnCancel)
+        Me.GroupBox1.Controls.Add(Me.btnAddProduct)
         Me.GroupBox1.Controls.Add(Me.Nvalue)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.txtDescription)
@@ -56,23 +56,23 @@ Partial Class RegistrarProducto
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Producto"
         '
-        'Button3
+        'btnCancel
         '
-        Me.Button3.Location = New System.Drawing.Point(128, 146)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(70, 23)
-        Me.Button3.TabIndex = 8
-        Me.Button3.Text = "Cancelar"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnCancel.Location = New System.Drawing.Point(128, 146)
+        Me.btnCancel.Name = "btnCancel"
+        Me.btnCancel.Size = New System.Drawing.Size(70, 23)
+        Me.btnCancel.TabIndex = 8
+        Me.btnCancel.Text = "Cancelar"
+        Me.btnCancel.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnAddProduct
         '
-        Me.Button2.Location = New System.Drawing.Point(43, 146)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(70, 23)
-        Me.Button2.TabIndex = 7
-        Me.Button2.Text = "Agregar"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnAddProduct.Location = New System.Drawing.Point(43, 146)
+        Me.btnAddProduct.Name = "btnAddProduct"
+        Me.btnAddProduct.Size = New System.Drawing.Size(70, 23)
+        Me.btnAddProduct.TabIndex = 7
+        Me.btnAddProduct.Text = "Agregar"
+        Me.btnAddProduct.UseVisualStyleBackColor = True
         '
         'Nvalue
         '
@@ -156,8 +156,8 @@ Partial Class RegistrarProducto
     End Sub
 
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnCancel As Button
+    Friend WithEvents btnAddProduct As Button
     Friend WithEvents Nvalue As NumericUpDown
     Friend WithEvents Label4 As Label
     Friend WithEvents txtDescription As TextBox

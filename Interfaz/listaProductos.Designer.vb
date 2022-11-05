@@ -23,6 +23,7 @@ Partial Class listaProductos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -40,16 +41,17 @@ Partial Class listaProductos
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvProducts = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.btnDeleteList = New System.Windows.Forms.Button()
         Me.btnImportProducts = New System.Windows.Forms.Button()
         Me.btnExportProducts = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
+        Me.SaveFileDialogProducts = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialogProducts = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         CType(Me.Nvalue, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -73,6 +75,15 @@ Partial Class listaProductos
         Me.GroupBox1.TabIndex = 0
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Producto"
+        '
+        'Button5
+        '
+        Me.Button5.Location = New System.Drawing.Point(43, 138)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(141, 23)
+        Me.Button5.TabIndex = 10
+        Me.Button5.Text = "Agregar Producto"
+        Me.Button5.UseVisualStyleBackColor = True
         '
         'Button4
         '
@@ -172,7 +183,7 @@ Partial Class listaProductos
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.DataGridView1)
+        Me.GroupBox2.Controls.Add(Me.dgvProducts)
         Me.GroupBox2.Location = New System.Drawing.Point(252, 12)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(536, 426)
@@ -221,14 +232,14 @@ Partial Class listaProductos
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Código"
         '
-        'DataGridView1
+        'dgvProducts
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 63)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(524, 357)
-        Me.DataGridView1.TabIndex = 0
+        Me.dgvProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvProducts.Location = New System.Drawing.Point(6, 63)
+        Me.dgvProducts.Name = "dgvProducts"
+        Me.dgvProducts.RowTemplate.Height = 25
+        Me.dgvProducts.Size = New System.Drawing.Size(524, 357)
+        Me.dgvProducts.TabIndex = 0
         '
         'GroupBox3
         '
@@ -269,14 +280,9 @@ Partial Class listaProductos
         Me.btnExportProducts.Text = "Exportar Productos"
         Me.btnExportProducts.UseVisualStyleBackColor = True
         '
-        'Button5
+        'OpenFileDialogProducts
         '
-        Me.Button5.Location = New System.Drawing.Point(43, 138)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(141, 23)
-        Me.Button5.TabIndex = 10
-        Me.Button5.Text = "Agregar Producto"
-        Me.Button5.UseVisualStyleBackColor = True
+        Me.OpenFileDialogProducts.FileName = "OpenFileDialog1"
         '
         'listaProductos
         '
@@ -295,7 +301,7 @@ Partial Class listaProductos
         CType(Me.Nvalue, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvProducts, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.ResumeLayout(False)
 
@@ -319,10 +325,12 @@ Partial Class listaProductos
     Friend WithEvents Label6 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label5 As Label
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvProducts As DataGridView
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents btnDeleteList As Button
     Friend WithEvents btnImportProducts As Button
     Friend WithEvents btnExportProducts As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents SaveFileDialogProducts As SaveFileDialog
+    Friend WithEvents OpenFileDialogProducts As OpenFileDialog
 End Class

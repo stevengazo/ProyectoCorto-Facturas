@@ -66,7 +66,7 @@ Partial Class Form1
         Me.Label13 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvCustomers = New System.Windows.Forms.DataGridView()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnBuscarCliente = New System.Windows.Forms.Button()
         Me.txtNombreBusCliente = New System.Windows.Forms.TextBox()
@@ -79,7 +79,7 @@ Partial Class Form1
         Me.GroupBox3.SuspendLayout()
         CType(Me.DGVProductosSelecionados, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MenuStrip1
@@ -452,7 +452,7 @@ Partial Class Form1
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.dgvCustomers)
         Me.GroupBox1.Controls.Add(Me.btnAgregar)
         Me.GroupBox1.Controls.Add(Me.btnBuscarCliente)
         Me.GroupBox1.Controls.Add(Me.txtNombreBusCliente)
@@ -466,14 +466,14 @@ Partial Class Form1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cliente"
         '
-        'DataGridView1
+        'dgvCustomers
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(16, 46)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(408, 130)
-        Me.DataGridView1.TabIndex = 20
+        Me.dgvCustomers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvCustomers.Location = New System.Drawing.Point(16, 46)
+        Me.dgvCustomers.Name = "dgvCustomers"
+        Me.dgvCustomers.RowTemplate.Height = 25
+        Me.dgvCustomers.Size = New System.Drawing.Size(408, 130)
+        Me.dgvCustomers.TabIndex = 20
         '
         'btnAgregar
         '
@@ -549,7 +549,7 @@ Partial Class Form1
         CType(Me.DGVProductosSelecionados, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -596,7 +596,7 @@ Partial Class Form1
     Friend WithEvents btnIVA As TextBox
     Friend WithEvents btnSubTotal As TextBox
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvCustomers As DataGridView
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnBuscarCliente As Button
     Friend WithEvents txtNombreBusCliente As TextBox
