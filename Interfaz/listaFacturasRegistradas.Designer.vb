@@ -23,14 +23,14 @@ Partial Class listaFacturasRegistradas
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.DataGridView1 = New System.Windows.Forms.DataGridView()
+        Me.dgvInvoices = New System.Windows.Forms.DataGridView()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnImportInvoices = New System.Windows.Forms.Button()
+        Me.btnExportInvoices = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.TextBox3 = New System.Windows.Forms.TextBox()
@@ -55,8 +55,10 @@ Partial Class listaFacturasRegistradas
         Me.Label11 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label13 = New System.Windows.Forms.Label()
+        Me.OpenFileDialogInvoice = New System.Windows.Forms.OpenFileDialog()
+        Me.SaveFileDialogInvoice = New System.Windows.Forms.SaveFileDialog()
         Me.GroupBox1.SuspendLayout()
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.dgvInvoices, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox2.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         CType(Me.DGVProductosSelecionados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,7 +66,7 @@ Partial Class listaFacturasRegistradas
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.DataGridView1)
+        Me.GroupBox1.Controls.Add(Me.dgvInvoices)
         Me.GroupBox1.Location = New System.Drawing.Point(381, 183)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(407, 323)
@@ -72,14 +74,14 @@ Partial Class listaFacturasRegistradas
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Facturas Registradas"
         '
-        'DataGridView1
+        'dgvInvoices
         '
-        Me.DataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DataGridView1.Location = New System.Drawing.Point(6, 22)
-        Me.DataGridView1.Name = "DataGridView1"
-        Me.DataGridView1.RowTemplate.Height = 25
-        Me.DataGridView1.Size = New System.Drawing.Size(395, 295)
-        Me.DataGridView1.TabIndex = 35
+        Me.dgvInvoices.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.dgvInvoices.Location = New System.Drawing.Point(6, 22)
+        Me.dgvInvoices.Name = "dgvInvoices"
+        Me.dgvInvoices.RowTemplate.Height = 25
+        Me.dgvInvoices.Size = New System.Drawing.Size(395, 295)
+        Me.dgvInvoices.TabIndex = 35
         '
         'GroupBox2
         '
@@ -87,8 +89,8 @@ Partial Class listaFacturasRegistradas
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Label1)
-        Me.GroupBox2.Controls.Add(Me.Button3)
-        Me.GroupBox2.Controls.Add(Me.Button2)
+        Me.GroupBox2.Controls.Add(Me.btnImportInvoices)
+        Me.GroupBox2.Controls.Add(Me.btnExportInvoices)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Location = New System.Drawing.Point(381, 12)
         Me.GroupBox2.Name = "GroupBox2"
@@ -129,23 +131,23 @@ Partial Class listaFacturasRegistradas
         Me.Label1.TabIndex = 3
         Me.Label1.Text = "Id de Factura"
         '
-        'Button3
+        'btnImportInvoices
         '
-        Me.Button3.Location = New System.Drawing.Point(130, 124)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(115, 23)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Importar Facturas"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnImportInvoices.Location = New System.Drawing.Point(130, 124)
+        Me.btnImportInvoices.Name = "btnImportInvoices"
+        Me.btnImportInvoices.Size = New System.Drawing.Size(115, 23)
+        Me.btnImportInvoices.TabIndex = 2
+        Me.btnImportInvoices.Text = "Importar Facturas"
+        Me.btnImportInvoices.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnExportInvoices
         '
-        Me.Button2.Location = New System.Drawing.Point(268, 124)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(114, 23)
-        Me.Button2.TabIndex = 1
-        Me.Button2.Text = "Exportar Facturas"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnExportInvoices.Location = New System.Drawing.Point(268, 124)
+        Me.btnExportInvoices.Name = "btnExportInvoices"
+        Me.btnExportInvoices.Size = New System.Drawing.Size(114, 23)
+        Me.btnExportInvoices.TabIndex = 1
+        Me.btnExportInvoices.Text = "Exportar Facturas"
+        Me.btnExportInvoices.UseVisualStyleBackColor = True
         '
         'Button1
         '
@@ -378,6 +380,10 @@ Partial Class listaFacturasRegistradas
         Me.Label13.TabIndex = 8
         Me.Label13.Text = "Nombre"
         '
+        'OpenFileDialogInvoice
+        '
+        Me.OpenFileDialogInvoice.FileName = "OpenFileDialog1"
+        '
         'listaFacturasRegistradas
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
@@ -391,7 +397,7 @@ Partial Class listaFacturasRegistradas
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Facturas Registradas"
         Me.GroupBox1.ResumeLayout(False)
-        CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.dgvInvoices, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
@@ -402,10 +408,10 @@ Partial Class listaFacturasRegistradas
     End Sub
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnImportInvoices As Button
+    Friend WithEvents btnExportInvoices As Button
     Friend WithEvents Button1 As Button
-    Friend WithEvents DataGridView1 As DataGridView
+    Friend WithEvents dgvInvoices As DataGridView
     Friend WithEvents TextBox2 As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents TextBox1 As TextBox
@@ -433,4 +439,6 @@ Partial Class listaFacturasRegistradas
     Friend WithEvents Label11 As Label
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
+    Friend WithEvents OpenFileDialogInvoice As OpenFileDialog
+    Friend WithEvents SaveFileDialogInvoice As SaveFileDialog
 End Class
