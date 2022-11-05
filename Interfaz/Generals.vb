@@ -7,6 +7,7 @@ Module GENERALS
 
     Public listOfProductsBuyed As List(Of ProductSelected) = New List(Of ProductSelected)
 
-    Public Invoicetmp As invoice
+    Public InvoiceTemporal As New invoice()
+    Public listOfInvoices As List(Of invoice) = New List(Of invoice)()
 
 End Module

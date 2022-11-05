@@ -89,23 +89,21 @@ Public Class listaProductos
             table.Columns.Add("Código")
             table.Columns.Add("Nombre")
             table.Columns.Add("Precio")
-
+            table.Columns.Add("Descripción")
             If GENERALS.listOfProducts.Count > 0 Then
                 For Each objProduct As Product In GENERALS.listOfProducts
-                    table.Rows.Add(objProduct.Id, objProduct.Name, objProduct.Price)
+                    table.Rows.Add(objProduct.Id, objProduct.Name, objProduct.Price, objProduct.Description)
                 Next
                 dgvProducts.Columns.Clear()
-
-                ' assign products to the table
-                dgvProducts.DataSource = table
-
                 ' add button to the row
                 Dim btn As New DataGridViewButtonColumn
-                btn.HeaderText = "Agregar"
-                btn.Text = "Agregar"
-                btn.Name = "btnAddProduct"
+                btn.HeaderText = "Seleccionar"
+                btn.Text = "Seleccionar"
+                btn.Name = "btnSelectProduct"
                 btn.UseColumnTextForButtonValue = True
                 dgvProducts.Columns.Add(btn)
+                ' assign products to the table
+                dgvProducts.DataSource = table
             Else
 
             End If

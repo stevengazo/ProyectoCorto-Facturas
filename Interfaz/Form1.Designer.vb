@@ -41,14 +41,14 @@ Partial Class Form1
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DGVProductosBuscados = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
-        Me.TextBox1 = New System.Windows.Forms.TextBox()
+        Me.txtCodInvoice = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.txtCodigoSeleCliente = New System.Windows.Forms.TextBox()
+        Me.txtDate = New System.Windows.Forms.TextBox()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.btnTotal = New System.Windows.Forms.TextBox()
-        Me.btnIVA = New System.Windows.Forms.TextBox()
-        Me.btnSubTotal = New System.Windows.Forms.TextBox()
+        Me.txtTotal = New System.Windows.Forms.TextBox()
+        Me.txtIVA = New System.Windows.Forms.TextBox()
+        Me.txtSubTotal = New System.Windows.Forms.TextBox()
         Me.btnGuardarFactura = New System.Windows.Forms.Button()
         Me.btnLimpiar = New System.Windows.Forms.Button()
         Me.txtNombreSeleCliente = New System.Windows.Forms.TextBox()
@@ -220,14 +220,14 @@ Partial Class Form1
         '
         'GroupBox3
         '
-        Me.GroupBox3.Controls.Add(Me.TextBox1)
+        Me.GroupBox3.Controls.Add(Me.txtCodInvoice)
         Me.GroupBox3.Controls.Add(Me.Label3)
-        Me.GroupBox3.Controls.Add(Me.txtCodigoSeleCliente)
+        Me.GroupBox3.Controls.Add(Me.txtDate)
         Me.GroupBox3.Controls.Add(Me.Label19)
         Me.GroupBox3.Controls.Add(Me.Label18)
-        Me.GroupBox3.Controls.Add(Me.btnTotal)
-        Me.GroupBox3.Controls.Add(Me.btnIVA)
-        Me.GroupBox3.Controls.Add(Me.btnSubTotal)
+        Me.GroupBox3.Controls.Add(Me.txtTotal)
+        Me.GroupBox3.Controls.Add(Me.txtIVA)
+        Me.GroupBox3.Controls.Add(Me.txtSubTotal)
         Me.GroupBox3.Controls.Add(Me.btnGuardarFactura)
         Me.GroupBox3.Controls.Add(Me.btnLimpiar)
         Me.GroupBox3.Controls.Add(Me.txtNombreSeleCliente)
@@ -250,13 +250,13 @@ Partial Class Form1
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Factura"
         '
-        'TextBox1
+        'txtCodInvoice
         '
-        Me.TextBox1.Location = New System.Drawing.Point(163, 43)
-        Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.ReadOnly = True
-        Me.TextBox1.Size = New System.Drawing.Size(171, 23)
-        Me.TextBox1.TabIndex = 36
+        Me.txtCodInvoice.Location = New System.Drawing.Point(163, 43)
+        Me.txtCodInvoice.Name = "txtCodInvoice"
+        Me.txtCodInvoice.ReadOnly = True
+        Me.txtCodInvoice.Size = New System.Drawing.Size(171, 23)
+        Me.txtCodInvoice.TabIndex = 36
         '
         'Label3
         '
@@ -267,13 +267,13 @@ Partial Class Form1
         Me.Label3.TabIndex = 35
         Me.Label3.Text = "Código"
         '
-        'txtCodigoSeleCliente
+        'txtDate
         '
-        Me.txtCodigoSeleCliente.Location = New System.Drawing.Point(163, 72)
-        Me.txtCodigoSeleCliente.Name = "txtCodigoSeleCliente"
-        Me.txtCodigoSeleCliente.ReadOnly = True
-        Me.txtCodigoSeleCliente.Size = New System.Drawing.Size(171, 23)
-        Me.txtCodigoSeleCliente.TabIndex = 34
+        Me.txtDate.Location = New System.Drawing.Point(163, 72)
+        Me.txtDate.Name = "txtDate"
+        Me.txtDate.ReadOnly = True
+        Me.txtDate.Size = New System.Drawing.Size(171, 23)
+        Me.txtDate.TabIndex = 34
         '
         'Label19
         '
@@ -294,29 +294,29 @@ Partial Class Form1
         Me.Label18.TabIndex = 32
         Me.Label18.Text = "Nombre"
         '
-        'btnTotal
+        'txtTotal
         '
-        Me.btnTotal.Location = New System.Drawing.Point(163, 429)
-        Me.btnTotal.Name = "btnTotal"
-        Me.btnTotal.ReadOnly = True
-        Me.btnTotal.Size = New System.Drawing.Size(171, 23)
-        Me.btnTotal.TabIndex = 31
+        Me.txtTotal.Location = New System.Drawing.Point(163, 429)
+        Me.txtTotal.Name = "txtTotal"
+        Me.txtTotal.ReadOnly = True
+        Me.txtTotal.Size = New System.Drawing.Size(171, 23)
+        Me.txtTotal.TabIndex = 31
         '
-        'btnIVA
+        'txtIVA
         '
-        Me.btnIVA.Location = New System.Drawing.Point(163, 400)
-        Me.btnIVA.Name = "btnIVA"
-        Me.btnIVA.ReadOnly = True
-        Me.btnIVA.Size = New System.Drawing.Size(171, 23)
-        Me.btnIVA.TabIndex = 30
+        Me.txtIVA.Location = New System.Drawing.Point(163, 400)
+        Me.txtIVA.Name = "txtIVA"
+        Me.txtIVA.ReadOnly = True
+        Me.txtIVA.Size = New System.Drawing.Size(171, 23)
+        Me.txtIVA.TabIndex = 30
         '
-        'btnSubTotal
+        'txtSubTotal
         '
-        Me.btnSubTotal.Location = New System.Drawing.Point(163, 371)
-        Me.btnSubTotal.Name = "btnSubTotal"
-        Me.btnSubTotal.ReadOnly = True
-        Me.btnSubTotal.Size = New System.Drawing.Size(171, 23)
-        Me.btnSubTotal.TabIndex = 29
+        Me.txtSubTotal.Location = New System.Drawing.Point(163, 371)
+        Me.txtSubTotal.Name = "txtSubTotal"
+        Me.txtSubTotal.ReadOnly = True
+        Me.txtSubTotal.Size = New System.Drawing.Size(171, 23)
+        Me.txtSubTotal.TabIndex = 29
         '
         'btnGuardarFactura
         '
@@ -589,12 +589,12 @@ Partial Class Form1
     Friend WithEvents txtIdentiSeleCliente As TextBox
     Friend WithEvents txtIdentificacionSeleCliente As TextBox
     Friend WithEvents txtApellidoSeleCliente As TextBox
-    Friend WithEvents txtCodigoSeleCliente As TextBox
+    Friend WithEvents txtDate As TextBox
     Friend WithEvents Label19 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents btnTotal As TextBox
-    Friend WithEvents btnIVA As TextBox
-    Friend WithEvents btnSubTotal As TextBox
+    Friend WithEvents txtTotal As TextBox
+    Friend WithEvents txtIVA As TextBox
+    Friend WithEvents txtSubTotal As TextBox
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents dgvCustomers As DataGridView
     Friend WithEvents btnAgregar As Button
@@ -604,6 +604,6 @@ Partial Class Form1
     Friend WithEvents txtIdBusCliente As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents ListarClientesRegistradosToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TextBox1 As TextBox
+    Friend WithEvents txtCodInvoice As TextBox
     Friend WithEvents Label3 As Label
 End Class

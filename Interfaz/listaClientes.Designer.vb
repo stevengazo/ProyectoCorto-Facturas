@@ -40,12 +40,14 @@ Partial Class listaClientes
         Me.dgvCustomers = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Button4 = New System.Windows.Forms.Button()
-        Me.Button3 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.btnExportCustomers = New System.Windows.Forms.Button()
+        Me.btnImportCustomers = New System.Windows.Forms.Button()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.Button5 = New System.Windows.Forms.Button()
+        Me.SaveFileDialogCustomers = New System.Windows.Forms.SaveFileDialog()
+        Me.OpenFileDialogCustomers = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.dgvCustomers, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -206,8 +208,8 @@ Partial Class listaClientes
         'GroupBox3
         '
         Me.GroupBox3.Controls.Add(Me.Button4)
-        Me.GroupBox3.Controls.Add(Me.Button3)
-        Me.GroupBox3.Controls.Add(Me.Button2)
+        Me.GroupBox3.Controls.Add(Me.btnExportCustomers)
+        Me.GroupBox3.Controls.Add(Me.btnImportCustomers)
         Me.GroupBox3.Location = New System.Drawing.Point(212, 192)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Size = New System.Drawing.Size(146, 125)
@@ -224,23 +226,23 @@ Partial Class listaClientes
         Me.Button4.Text = "Limpiar Lista"
         Me.Button4.UseVisualStyleBackColor = True
         '
-        'Button3
+        'btnExportCustomers
         '
-        Me.Button3.Location = New System.Drawing.Point(6, 51)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(127, 23)
-        Me.Button3.TabIndex = 1
-        Me.Button3.Text = "Exportar Clientes"
-        Me.Button3.UseVisualStyleBackColor = True
+        Me.btnExportCustomers.Location = New System.Drawing.Point(6, 51)
+        Me.btnExportCustomers.Name = "btnExportCustomers"
+        Me.btnExportCustomers.Size = New System.Drawing.Size(127, 23)
+        Me.btnExportCustomers.TabIndex = 1
+        Me.btnExportCustomers.Text = "Exportar Clientes"
+        Me.btnExportCustomers.UseVisualStyleBackColor = True
         '
-        'Button2
+        'btnImportCustomers
         '
-        Me.Button2.Location = New System.Drawing.Point(6, 22)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(127, 23)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Importar Clientes"
-        Me.Button2.UseVisualStyleBackColor = True
+        Me.btnImportCustomers.Location = New System.Drawing.Point(6, 22)
+        Me.btnImportCustomers.Name = "btnImportCustomers"
+        Me.btnImportCustomers.Size = New System.Drawing.Size(127, 23)
+        Me.btnImportCustomers.TabIndex = 0
+        Me.btnImportCustomers.Text = "Importar Clientes"
+        Me.btnImportCustomers.UseVisualStyleBackColor = True
         '
         'GroupBox4
         '
@@ -280,6 +282,10 @@ Partial Class listaClientes
         Me.Button5.TabIndex = 3
         Me.Button5.Text = "Agregar Cliente"
         Me.Button5.UseVisualStyleBackColor = True
+        '
+        'OpenFileDialogCustomers
+        '
+        Me.OpenFileDialogCustomers.FileName = "OpenFileDialog1"
         '
         'listaClientes
         '
@@ -323,10 +329,12 @@ Partial Class listaClientes
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents btnExportCustomers As Button
+    Friend WithEvents btnImportCustomers As Button
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
     Friend WithEvents Button5 As Button
+    Friend WithEvents SaveFileDialogCustomers As SaveFileDialog
+    Friend WithEvents OpenFileDialogCustomers As OpenFileDialog
 End Class
