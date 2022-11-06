@@ -23,7 +23,6 @@ Partial Class listaProductos
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.Button2 = New System.Windows.Forms.Button()
@@ -36,8 +35,6 @@ Partial Class listaProductos
         Me.txtId = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -57,7 +54,6 @@ Partial Class listaProductos
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button5)
         Me.GroupBox1.Controls.Add(Me.Button4)
         Me.GroupBox1.Controls.Add(Me.Button3)
         Me.GroupBox1.Controls.Add(Me.Button2)
@@ -76,18 +72,9 @@ Partial Class listaProductos
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Información de Producto"
         '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(43, 138)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(141, 23)
-        Me.Button5.TabIndex = 10
-        Me.Button5.Text = "Agregar Producto"
-        Me.Button5.UseVisualStyleBackColor = True
-        '
         'Button4
         '
-        Me.Button4.Location = New System.Drawing.Point(43, 225)
+        Me.Button4.Location = New System.Drawing.Point(43, 221)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(141, 23)
         Me.Button4.TabIndex = 9
@@ -96,7 +83,7 @@ Partial Class listaProductos
         '
         'Button3
         '
-        Me.Button3.Location = New System.Drawing.Point(43, 196)
+        Me.Button3.Location = New System.Drawing.Point(43, 190)
         Me.Button3.Name = "Button3"
         Me.Button3.Size = New System.Drawing.Size(141, 23)
         Me.Button3.TabIndex = 8
@@ -105,7 +92,7 @@ Partial Class listaProductos
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(43, 167)
+        Me.Button2.Location = New System.Drawing.Point(43, 154)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(141, 23)
         Me.Button2.TabIndex = 7
@@ -178,8 +165,6 @@ Partial Class listaProductos
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
-        Me.GroupBox2.Controls.Add(Me.Label6)
         Me.GroupBox2.Controls.Add(Me.TextBox1)
         Me.GroupBox2.Controls.Add(Me.Button1)
         Me.GroupBox2.Controls.Add(Me.Label5)
@@ -191,27 +176,11 @@ Partial Class listaProductos
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Productos"
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(227, 19)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 23)
-        Me.TextBox2.TabIndex = 12
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(170, 24)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(51, 15)
-        Me.Label6.TabIndex = 13
-        Me.Label6.Text = "Nombre"
-        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(64, 19)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(263, 23)
         Me.TextBox1.TabIndex = 10
         '
         'Button1
@@ -321,8 +290,6 @@ Partial Class listaProductos
     Friend WithEvents txtId As TextBox
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents TextBox2 As TextBox
-    Friend WithEvents Label6 As Label
     Friend WithEvents TextBox1 As TextBox
     Friend WithEvents Label5 As Label
     Friend WithEvents dgvProducts As DataGridView
@@ -330,7 +297,6 @@ Partial Class listaProductos
     Friend WithEvents btnDeleteList As Button
     Friend WithEvents btnImportProducts As Button
     Friend WithEvents btnExportProducts As Button
-    Friend WithEvents Button5 As Button
     Friend WithEvents SaveFileDialogProducts As SaveFileDialog
     Friend WithEvents OpenFileDialogProducts As OpenFileDialog
 End Class

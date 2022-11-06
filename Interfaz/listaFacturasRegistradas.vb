@@ -1,4 +1,5 @@
 ﻿Imports System.Dynamic
+Imports System.IO
 Imports System.Linq.Expressions
 Imports System.Xml
 Imports Entities
@@ -19,21 +20,19 @@ Public Class listaFacturasRegistradas
     Private Sub loadInvoices()
         Try
             Dim table As New DataTable()
-            table.Columns.Add("Código")
+            table.Columns.Add("Código F")
             table.Columns.Add("Fecha")
-            table.Columns.Add("Cliente")
+            table.Columns.Add("Nombre")
+            table.Columns.Add("Apellidos")
             table.Columns.Add("Identificación")
             table.Columns.Add("Sub Total")
+            dgvInvoices.Columns.Clear()
             If listOfInvoices.Count > 0 Then
                 For Each objInvoice As invoice In listOfInvoices
-                    Dim fullName As String = objInvoice.customer.Name + "" + objInvoice.customer.LastName
-                    table.Rows.Add(objInvoice.idInvoice, objInvoice.dateInvoice, fullName, objInvoice.customer.id, objInvoice.subtotal)
-                    dgvInvoices.Columns.Clear()
-
+                    table.Rows.Add(objInvoice.idInvoice, objInvoice.dateInvoice, objInvoice.customer.Name, objInvoice.customer.LastName, objInvoice.customer.id, objInvoice.subtotal)
                     dgvInvoices.DataSource = table
                 Next
             End If
-
         Catch ex As Exception
             MessageBox.Show(ex.Message, "Error interno", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End Try
@@ -41,7 +40,40 @@ Public Class listaFacturasRegistradas
 
 
     Private Sub btnImportInvoices_Click(sender As Object, e As EventArgs) Handles btnImportInvoices.Click
+        Try
+            OpenFileDialogInvoice.Title = "Importar Archivo XML"
+            OpenFileDialogInvoice.Filter = "Archivo xml|*.xml"
 
+            If OpenFileDialogInvoice.ShowDialog() = Windows.Forms.DialogResult.OK Then
+                listOfInvoices.Clear()
+                Dim urlFile As String = OpenFileDialogInvoice.FileName
+                Dim data As New FileStream(urlFile, FileMode.Open, FileAccess.Read)
+                Dim documentXML As New XmlDataDocument()
+
+                documentXML.Load(data)
+
+                Dim listNodeXML As XmlNodeList
+                listNodeXML = documentXML.GetElementsByTagName("Invoice")
+                For Each _node1 As XmlNode In listNodeXML
+                    Dim tmpInvoice As New invoice()
+                    tmpInvoice.idInvoice = _node1.SelectSingleNode("Id").InnerText
+                    tmpInvoice.dateInvoice = _node1.SelectSingleNode("Date").InnerText
+                    tmpInvoice.subtotal = Double.Parse(_node1.SelectSingleNode("SubTotal").InnerText)
+                    tmpInvoice.totalPrice = Double.Parse(_node1.SelectSingleNode("TotalPrice").InnerText)
+                    Dim listProductsXML = _node1.SelectNodes("ListProducts/Product")
+                    For Each _node2 As XmlNode In listProductsXML
+                        Dim tmpProduct As New ProductSelected()
+                        tmpProduct.Id = _node2.SelectSingleNode("Id").InnerText
+                        tmpProduct.Name = _node2.SelectSingleNode("Name").InnerText
+                        tmpInvoice.listOfProducts.Add(tmpProduct)
+                    Next
+
+                Next
+            End If
+
+        Catch ex As Exception
+            MessageBox.Show(ex.Message, "Error interno", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End Try
     End Sub
 
     Private Sub btnExportInvoices_Click(sender As Object, e As EventArgs) Handles btnExportInvoices.Click
@@ -69,8 +101,24 @@ Public Class listaFacturasRegistradas
                             _writer.WriteElementString("typeId", objInvoice.customer.typeId)
                             _writer.WriteElementString("Name", objInvoice.customer.Name)
                             _writer.WriteElementString("LastName", objInvoice.customer.LastName)
-                            _writer.WriteEndElement()
                             'Finish customer
+                            _writer.WriteEndElement()
+                            'Start List Products
+                            _writer.WriteStartElement("ListProducts")
+                            For Each tmpProduct As ProductSelected In objInvoice.listOfProducts
+                                'Start Product
+                                _writer.WriteStartElement("Product")
+                                _writer.WriteElementString("Id", tmpProduct.Id)
+                                _writer.WriteElementString("Name", tmpProduct.Name)
+                                _writer.WriteElementString("Description", tmpProduct.Description)
+                                _writer.WriteElementString("Price", tmpProduct.Price)
+                                _writer.WriteElementString("Quantity", tmpProduct.Quantity)
+                                'End Product
+                                _writer.WriteEndElement()
+                            Next
+
+                            'finish list products
+                            _writer.WriteEndElement()
                             'Finish the Invoice
                             _writer.WriteEndElement()
                         Next

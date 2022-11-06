@@ -35,9 +35,7 @@ Partial Class Form1
         Me.RegistrarProductoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.btnBuscarProducto = New System.Windows.Forms.Button()
-        Me.txtBusNombProducto = New System.Windows.Forms.TextBox()
         Me.txtBusCodProducto = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.DGVProductosBuscados = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -66,13 +64,11 @@ Partial Class Form1
         Me.Label13 = New System.Windows.Forms.Label()
         Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvCustomers = New System.Windows.Forms.DataGridView()
         Me.btnAgregar = New System.Windows.Forms.Button()
         Me.btnBuscarCliente = New System.Windows.Forms.Button()
-        Me.txtNombreBusCliente = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.txtIdBusCliente = New System.Windows.Forms.TextBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.MenuStrip1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.DGVProductosBuscados, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -156,9 +152,7 @@ Partial Class Form1
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.btnBuscarProducto)
-        Me.GroupBox2.Controls.Add(Me.txtBusNombProducto)
         Me.GroupBox2.Controls.Add(Me.txtBusCodProducto)
-        Me.GroupBox2.Controls.Add(Me.Label8)
         Me.GroupBox2.Controls.Add(Me.Label7)
         Me.GroupBox2.Controls.Add(Me.DGVProductosBuscados)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 224)
@@ -177,28 +171,12 @@ Partial Class Form1
         Me.btnBuscarProducto.Text = "Buscar"
         Me.btnBuscarProducto.UseVisualStyleBackColor = True
         '
-        'txtBusNombProducto
-        '
-        Me.txtBusNombProducto.Location = New System.Drawing.Point(235, 23)
-        Me.txtBusNombProducto.Name = "txtBusNombProducto"
-        Me.txtBusNombProducto.Size = New System.Drawing.Size(100, 23)
-        Me.txtBusNombProducto.TabIndex = 18
-        '
         'txtBusCodProducto
         '
         Me.txtBusCodProducto.Location = New System.Drawing.Point(72, 23)
         Me.txtBusCodProducto.Name = "txtBusCodProducto"
-        Me.txtBusCodProducto.Size = New System.Drawing.Size(100, 23)
+        Me.txtBusCodProducto.Size = New System.Drawing.Size(263, 23)
         Me.txtBusCodProducto.TabIndex = 17
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(178, 26)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(51, 15)
-        Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Nombre"
         '
         'Label7
         '
@@ -452,19 +430,26 @@ Partial Class Form1
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.dgvCustomers)
         Me.GroupBox1.Controls.Add(Me.btnAgregar)
         Me.GroupBox1.Controls.Add(Me.btnBuscarCliente)
-        Me.GroupBox1.Controls.Add(Me.txtNombreBusCliente)
-        Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.txtIdBusCliente)
-        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Location = New System.Drawing.Point(12, 27)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(430, 191)
         Me.GroupBox1.TabIndex = 1
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Cliente"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(16, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(79, 15)
+        Me.Label1.TabIndex = 22
+        Me.Label1.Text = "Identificación"
         '
         'dgvCustomers
         '
@@ -493,37 +478,12 @@ Partial Class Form1
         Me.btnBuscarCliente.Text = "Buscar"
         Me.btnBuscarCliente.UseVisualStyleBackColor = True
         '
-        'txtNombreBusCliente
-        '
-        Me.txtNombreBusCliente.Location = New System.Drawing.Point(196, 17)
-        Me.txtNombreBusCliente.Name = "txtNombreBusCliente"
-        Me.txtNombreBusCliente.Size = New System.Drawing.Size(98, 23)
-        Me.txtNombreBusCliente.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(137, 21)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 15)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Nombre"
-        '
         'txtIdBusCliente
         '
-        Me.txtIdBusCliente.Location = New System.Drawing.Point(30, 17)
+        Me.txtIdBusCliente.Location = New System.Drawing.Point(101, 17)
         Me.txtIdBusCliente.Name = "txtIdBusCliente"
-        Me.txtIdBusCliente.Size = New System.Drawing.Size(98, 23)
+        Me.txtIdBusCliente.Size = New System.Drawing.Size(191, 23)
         Me.txtIdBusCliente.TabIndex = 1
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(9, 21)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(17, 15)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Id"
         '
         'Form1
         '
@@ -566,9 +526,7 @@ Partial Class Form1
     Friend WithEvents ProductosRegistradosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RegistrarProductoToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents txtBusNombProducto As TextBox
     Friend WithEvents txtBusCodProducto As TextBox
-    Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents DGVProductosBuscados As DataGridView
     Friend WithEvents btnBuscarProducto As Button
@@ -599,11 +557,9 @@ Partial Class Form1
     Friend WithEvents dgvCustomers As DataGridView
     Friend WithEvents btnAgregar As Button
     Friend WithEvents btnBuscarCliente As Button
-    Friend WithEvents txtNombreBusCliente As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents txtIdBusCliente As TextBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents ListarClientesRegistradosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents txtCodInvoice As TextBox
     Friend WithEvents Label3 As Label
+    Friend WithEvents Label1 As Label
 End Class

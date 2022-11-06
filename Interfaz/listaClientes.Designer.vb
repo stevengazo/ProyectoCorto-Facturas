@@ -33,9 +33,7 @@ Partial Class listaClientes
         Me.Label13 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
-        Me.TextBox2 = New System.Windows.Forms.TextBox()
         Me.TextBox1 = New System.Windows.Forms.TextBox()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.dgvCustomers = New System.Windows.Forms.DataGridView()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
@@ -45,7 +43,6 @@ Partial Class listaClientes
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.Button6 = New System.Windows.Forms.Button()
-        Me.Button5 = New System.Windows.Forms.Button()
         Me.SaveFileDialogCustomers = New System.Windows.Forms.SaveFileDialog()
         Me.OpenFileDialogCustomers = New System.Windows.Forms.OpenFileDialog()
         Me.GroupBox1.SuspendLayout()
@@ -143,9 +140,7 @@ Partial Class listaClientes
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.Button1)
-        Me.GroupBox2.Controls.Add(Me.TextBox2)
         Me.GroupBox2.Controls.Add(Me.TextBox1)
-        Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.Label1)
         Me.GroupBox2.Controls.Add(Me.dgvCustomers)
         Me.GroupBox2.Location = New System.Drawing.Point(364, 12)
@@ -164,28 +159,12 @@ Partial Class listaClientes
         Me.Button1.Text = "Buscar"
         Me.Button1.UseVisualStyleBackColor = True
         '
-        'TextBox2
-        '
-        Me.TextBox2.Location = New System.Drawing.Point(246, 21)
-        Me.TextBox2.Name = "TextBox2"
-        Me.TextBox2.Size = New System.Drawing.Size(100, 23)
-        Me.TextBox2.TabIndex = 4
-        '
         'TextBox1
         '
         Me.TextBox1.Location = New System.Drawing.Point(83, 21)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(100, 23)
+        Me.TextBox1.Size = New System.Drawing.Size(263, 23)
         Me.TextBox1.TabIndex = 3
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(189, 24)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(51, 15)
-        Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Nombre"
         '
         'Label1
         '
@@ -248,7 +227,6 @@ Partial Class listaClientes
         '
         Me.GroupBox4.Controls.Add(Me.Button7)
         Me.GroupBox4.Controls.Add(Me.Button6)
-        Me.GroupBox4.Controls.Add(Me.Button5)
         Me.GroupBox4.Location = New System.Drawing.Point(12, 192)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(194, 122)
@@ -258,7 +236,7 @@ Partial Class listaClientes
         '
         'Button7
         '
-        Me.Button7.Location = New System.Drawing.Point(30, 77)
+        Me.Button7.Location = New System.Drawing.Point(30, 71)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(127, 23)
         Me.Button7.TabIndex = 5
@@ -267,21 +245,12 @@ Partial Class listaClientes
         '
         'Button6
         '
-        Me.Button6.Location = New System.Drawing.Point(30, 48)
+        Me.Button6.Location = New System.Drawing.Point(30, 33)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(127, 23)
         Me.Button6.TabIndex = 4
         Me.Button6.Text = "Actualizar Cliente"
         Me.Button6.UseVisualStyleBackColor = True
-        '
-        'Button5
-        '
-        Me.Button5.Location = New System.Drawing.Point(30, 22)
-        Me.Button5.Name = "Button5"
-        Me.Button5.Size = New System.Drawing.Size(127, 23)
-        Me.Button5.TabIndex = 3
-        Me.Button5.Text = "Agregar Cliente"
-        Me.Button5.UseVisualStyleBackColor = True
         '
         'OpenFileDialogCustomers
         '
@@ -323,9 +292,7 @@ Partial Class listaClientes
     Friend WithEvents Label12 As Label
     Friend WithEvents Label13 As Label
     Friend WithEvents Button1 As Button
-    Friend WithEvents TextBox2 As TextBox
     Friend WithEvents TextBox1 As TextBox
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents GroupBox3 As GroupBox
     Friend WithEvents Button4 As Button
@@ -334,7 +301,6 @@ Partial Class listaClientes
     Friend WithEvents GroupBox4 As GroupBox
     Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
     Friend WithEvents SaveFileDialogCustomers As SaveFileDialog
     Friend WithEvents OpenFileDialogCustomers As OpenFileDialog
 End Class
