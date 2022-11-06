@@ -8,7 +8,7 @@ Imports Interfaz.GENERALS
 
 Public Class listaFacturasRegistradas
 
-    Private Sub btnGuardarFactura_Click(sender As Object, e As EventArgs) Handles btnGuardarFactura.Click
+    Private Sub btnGuardarFactura_Click(sender As Object, e As EventArgs)
 
     End Sub
 
@@ -60,15 +60,30 @@ Public Class listaFacturasRegistradas
                     tmpInvoice.dateInvoice = _node1.SelectSingleNode("Date").InnerText
                     tmpInvoice.subtotal = Double.Parse(_node1.SelectSingleNode("SubTotal").InnerText)
                     tmpInvoice.totalPrice = Double.Parse(_node1.SelectSingleNode("TotalPrice").InnerText)
+
+                    Dim customerNodes = _node1.SelectNodes("Customer")
+
+                    For Each _node3 As XmlNode In customerNodes
+                        tmpInvoice.customer = New Customer()
+                        tmpInvoice.customer.id = _node3.SelectSingleNode("Id").InnerText
+                        tmpInvoice.customer.typeId = _node3.SelectSingleNode("typeId").InnerText
+                        tmpInvoice.customer.Name = _node3.SelectSingleNode("Name").InnerText
+                        tmpInvoice.customer.LastName = _node3.SelectSingleNode("LastName").InnerText
+                    Next
+
+
                     Dim listProductsXML = _node1.SelectNodes("ListProducts/Product")
                     For Each _node2 As XmlNode In listProductsXML
                         Dim tmpProduct As New ProductSelected()
                         tmpProduct.Id = _node2.SelectSingleNode("Id").InnerText
                         tmpProduct.Name = _node2.SelectSingleNode("Name").InnerText
+                        tmpProduct.Price = Double.Parse(_node2.SelectSingleNode("Price").InnerText)
+                        tmpProduct.Quantity = Integer.Parse(_node2.SelectSingleNode("Quantity").InnerText)
                         tmpInvoice.listOfProducts.Add(tmpProduct)
                     Next
-
+                    listOfInvoices.Add(tmpInvoice)
                 Next
+                loadInvoices()
             End If
 
         Catch ex As Exception
@@ -78,7 +93,7 @@ Public Class listaFacturasRegistradas
 
     Private Sub btnExportInvoices_Click(sender As Object, e As EventArgs) Handles btnExportInvoices.Click
         Try
-            If listOfInvoices.Count >= 1 Then
+            If listOfInvoices.Count > 3 Then
                 SaveFileDialogInvoice.Title = "Exportar Facturas"
                 SaveFileDialogInvoice.Filter = "Archivo XML|*.xml"
                 If SaveFileDialogInvoice.ShowDialog() = Windows.Forms.DialogResult.OK Then

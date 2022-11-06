@@ -120,6 +120,8 @@ Partial Class Form1
         '
         'RegistrarNuevoClienteToolStripMenuItem
         '
+        Me.RegistrarNuevoClienteToolStripMenuItem.BackColor = System.Drawing.Color.Green
+        Me.RegistrarNuevoClienteToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.RegistrarNuevoClienteToolStripMenuItem.Name = "RegistrarNuevoClienteToolStripMenuItem"
         Me.RegistrarNuevoClienteToolStripMenuItem.Size = New System.Drawing.Size(211, 22)
         Me.RegistrarNuevoClienteToolStripMenuItem.Text = "Registrar Nuevo Cliente"
@@ -145,6 +147,8 @@ Partial Class Form1
         '
         'RegistrarProductoToolStripMenuItem
         '
+        Me.RegistrarProductoToolStripMenuItem.BackColor = System.Drawing.Color.Green
+        Me.RegistrarProductoToolStripMenuItem.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.RegistrarProductoToolStripMenuItem.Name = "RegistrarProductoToolStripMenuItem"
         Me.RegistrarProductoToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
         Me.RegistrarProductoToolStripMenuItem.Text = "Registrar Producto"
@@ -298,12 +302,14 @@ Partial Class Form1
         '
         'btnGuardarFactura
         '
+        Me.btnGuardarFactura.BackColor = System.Drawing.Color.Green
+        Me.btnGuardarFactura.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnGuardarFactura.Location = New System.Drawing.Point(6, 468)
         Me.btnGuardarFactura.Name = "btnGuardarFactura"
         Me.btnGuardarFactura.Size = New System.Drawing.Size(75, 23)
         Me.btnGuardarFactura.TabIndex = 25
         Me.btnGuardarFactura.Text = "Generar"
-        Me.btnGuardarFactura.UseVisualStyleBackColor = True
+        Me.btnGuardarFactura.UseVisualStyleBackColor = False
         '
         'btnLimpiar
         '
@@ -462,12 +468,14 @@ Partial Class Form1
         '
         'btnAgregar
         '
+        Me.btnAgregar.BackColor = System.Drawing.Color.DarkGreen
+        Me.btnAgregar.ForeColor = System.Drawing.SystemColors.ButtonFace
         Me.btnAgregar.Location = New System.Drawing.Point(366, 16)
         Me.btnAgregar.Name = "btnAgregar"
-        Me.btnAgregar.Size = New System.Drawing.Size(60, 23)
+        Me.btnAgregar.Size = New System.Drawing.Size(60, 24)
         Me.btnAgregar.TabIndex = 21
         Me.btnAgregar.Text = "Agregar"
-        Me.btnAgregar.UseVisualStyleBackColor = True
+        Me.btnAgregar.UseVisualStyleBackColor = False
         '
         'btnBuscarCliente
         '
