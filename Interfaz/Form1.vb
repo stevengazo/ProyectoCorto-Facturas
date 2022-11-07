@@ -301,4 +301,24 @@ Public Class Form1
     Private Sub SalirToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SalirToolStripMenuItem.Click
         Close()
     End Sub
+
+
+    Private Sub DGVProductosSelecionados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVProductosSelecionados.CellContentClick
+        If e.ColumnIndex = 0 Then
+            Dim objProductSelect As New ProductSelected()
+            objProductSelect.Id = DGVProductosSelecionados.Item(1, e.RowIndex).Value
+            objProductSelect.Name = DGVProductosSelecionados.Item(2, e.RowIndex).Value
+            objProductSelect.Price = Double.Parse(DGVProductosSelecionados.Item(3, e.RowIndex).Value)
+            objProductSelect.Quantity = Integer.Parse(DGVProductosSelecionados.Item(4, e.RowIndex).Value)
+
+            Dim queryConsult = (From produc In InvoiceTemporal.listOfProducts
+                                Where produc.Id.Equals(objProductSelect.Id)
+                                Select produc).ToList()
+            For Each prod In queryConsult
+                InvoiceTemporal.listOfProducts.Remove(prod)
+            Next
+            loadInvoiceProducts()
+
+        End If
+    End Sub
 End Class

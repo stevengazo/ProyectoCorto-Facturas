@@ -1,5 +1,6 @@
 ﻿Imports Entities
 Imports System.Linq
+Imports Interfaz.GENERALS
 Imports System.Runtime.CompilerServices
 
 Public Class CantidadProducto
@@ -35,7 +36,19 @@ Public Class CantidadProducto
                 _Product.Description = objProduct.Description
                 _Product.Quantity = NQuantity.Value
                 _Product.Price = objProduct.Price
-                GENERALS.InvoiceTemporal.listOfProducts.Add(_Product)
+
+                Dim productQuery = (From product In InvoiceTemporal.listOfProducts
+                                    Where product.Id.Contains(_Product.Id)
+                                    Select product).ToList()
+                If productQuery.Count > 0 Then
+                    For Each prod In productQuery
+                        prod.Quantity = prod.Quantity + _Product.Quantity
+                        InvoiceTemporal.listOfProducts.Remove(prod)
+                        InvoiceTemporal.listOfProducts.Add(prod)
+                    Next
+                Else
+                    InvoiceTemporal.listOfProducts.Add(_Product)
+                End If
                 Close()
             End If
         Catch ex As Exception
